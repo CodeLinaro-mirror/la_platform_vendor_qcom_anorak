@@ -1,5 +1,5 @@
 PRODUCT_MAKEFILES := \
-   $(LOCAL_DIR)/taro.mk
+   $(LOCAL_DIR)/anorak.mk
 
 COMMON_LUNCH_CHOICES := \
-        taro-userdebug
+        anorak-userdebug
