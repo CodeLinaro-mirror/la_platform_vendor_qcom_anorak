@@ -498,6 +498,9 @@ PRODUCT_VENDOR_PROPERTIES+= \
 # GPU Profiler support
 PRODUCT_VENDOR_PROPERTIES += graphics.gpu.profiler.support=true
 
+# Enable Smcinvoke based System Listeners
+TARGET_ENABLE_SMCI_SYSLISTENER := true
+
 ###################################################################################
 # This is the End of target.mk file.
 # Now, Pickup other split product.mk files:
