@@ -207,6 +207,8 @@ VENDOR_SOONG_WHITELIST = {
     "vendor/qcom/proprietary/android-perf/configs/perf-product-vendor.mk",
     "vendor/qcom/proprietary/commonsys-intf/bluetooth/bt-system-proprietary-product.mk",
     "vendor/qcom/proprietary/cv/fastcv/cv_vendor_board.mk",
+    "vendor/qcom/opensource/lights/lights-vendor-product.mk",
+    "vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk",
     "vendor/qcom/proprietary/perf-core/configs/perf-core-product-vendor.mk",
     "vendor/qcom/proprietary/chi-cdk/configs/product.mk",
     "vendor/qcom/proprietary/techpack/artifacts/xr/config/xr-artifacts-product-proprietary.mk",
