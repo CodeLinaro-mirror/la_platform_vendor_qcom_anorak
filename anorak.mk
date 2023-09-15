@@ -203,7 +203,13 @@ BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 
+ifeq ($(PLATFORM_SDK_VERSION), 34)
+JAVA_IN_VENDOR_SOONG_WHITE_LIST +=\
+loadlibrarytest_vendor_app\
+ExampleVibratorJavaVendorClient
+else
 $(call inherit-product, build/make/target/product/gsi_keys.mk)
+endif
 
 BOARD_HAVE_BLUETOOTH := false
 BOARD_HAVE_QCOM_FM := false
