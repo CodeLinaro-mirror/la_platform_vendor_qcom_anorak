@@ -334,6 +334,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_HOST_PACKAGES += \
     configstore_xmlparser
 
+# Android Bootanimation
+PRODUCT_PACKAGES += bootanimation_xr
+
 # QRTR related packages
 PRODUCT_PACKAGES += qrtr-ns
 PRODUCT_PACKAGES += qrtr-lookup
