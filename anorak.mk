@@ -14,6 +14,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Enable debugfs restrictions
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
+# Set for XR targets
+TARGET_USES_XR_CONFIG := true
+
 #Enable vm support
 TARGET_ENABLE_VM_SUPPORT := true
 
