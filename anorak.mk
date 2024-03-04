@@ -8,11 +8,17 @@ RELAX_USES_LIBRARY_CHECK := true
 # Default Android A/B configuration
 ENABLE_AB ?= true
 
+#Flag to check XR platform
+TARGET_DEFINES_XR_CONFIGURATION := true
+
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Enable debugfs restrictions
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+
+# Set for XR targets
+TARGET_USES_XR_CONFIG := true
 
 #Enable vm support
 TARGET_ENABLE_VM_SUPPORT := true
