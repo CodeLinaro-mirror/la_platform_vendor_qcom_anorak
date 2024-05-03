@@ -131,6 +131,16 @@ on boot
     chown system /sys/devices/system/cpu/hyp_core_ctl/hcc_min_freq
     #USB controller configuration
     setprop vendor.usb.controller a600000.dwc3
+    #Create directories for Location services
+    mkdir /data/vendor/location 0770 wifi wifi
+    chmod 2770 /data/vendor/location
+    mkdir /data/vendor/location/mq 0770 wifi wifi
+    chmod 2770 /data/vendor/location/mq
+    mkdir /dev/socket/location 0770 wifi wifi
+    chmod 2770 /dev/socket/location
+    mkdir /dev/socket/location/mq 0770 wifi wifi
+    chmod 2770 /dev/socket/location/mq
+
 
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
@@ -220,3 +230,8 @@ service fan_control_turn_off /vendor/bin/fan_service 0
     user root
     disabled
     oneshot
+
+service vendor.lowi-server /system/vendor/bin/lowi-server
+    class late_start
+    user wifi
+    group wifi
