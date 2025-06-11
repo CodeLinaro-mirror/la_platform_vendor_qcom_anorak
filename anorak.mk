@@ -11,6 +11,9 @@ ENABLE_AB ?= true
 #Flag to check XR platform
 TARGET_DEFINES_XR_CONFIGURATION := true
 
+# Include Google perception for AXR
+$(call inherit-product-if-exists, vendor/google/openpx/packages/google_openpx_proprietary.mk)
+
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
