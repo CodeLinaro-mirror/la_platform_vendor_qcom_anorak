@@ -30,10 +30,6 @@ TARGET_CONSOLE_ENABLED ?=
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Set GRF/Vendor freeze properties
-BOARD_SHIPPING_API_LEVEL := 31
-BOARD_API_LEVEL := 31
-
 # Set SoC manufacturer property
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=QTI
