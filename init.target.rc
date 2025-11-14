@@ -63,7 +63,7 @@
 
 import /vendor/etc/init/hw/init.qti.kernel.rc
 
-- import /vendor/etc/init/hw/init.anorak.xr.rc
+import /vendor/etc/init/hw/init.anorak.xr.rc
 
 on early-init
     write /proc/sys/kernel/printk_devkmsg ratelimited
