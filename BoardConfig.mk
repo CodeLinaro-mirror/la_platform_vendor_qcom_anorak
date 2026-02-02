@@ -37,21 +37,21 @@ BOARD_KERNEL_SEPARATED_DTBO := false
 
 ### Dynamic partition Handling
 # Define the Dynamic Partition sizes and groups.
-ifeq ($(ENABLE_AB), true)
-    ifeq ($(ENABLE_VIRTUAL_AB), true)
-        BOARD_SUPER_PARTITION_SIZE := 6442450944
-    else
-        BOARD_SUPER_PARTITION_SIZE := 12884901888
-    endif
+# For AXR targets, super partition size is 10GB
+ifeq ($(wildcard vendor/google/openpx/packages),vendor/google/openpx/packages)
+    BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 10733223936
+    BOARD_SUPER_PARTITION_SIZE := 10737418240
 else
-        BOARD_SUPER_PARTITION_SIZE := 6442450944
+    BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6438256640
+    BOARD_SUPER_PARTITION_SIZE := 6442450944
 endif
+
 ifeq ($(BOARD_KERNEL_SEPARATED_DTBO),true)
     # Enable DTBO for recovery image
     BOARD_INCLUDE_RECOVERY_DTBO := true
 endif
+
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6438256640
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := vendor vendor_dlkm odm
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x06400000
 
